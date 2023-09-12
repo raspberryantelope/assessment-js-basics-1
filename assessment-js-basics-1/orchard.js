@@ -40,7 +40,7 @@ const pinkPrice = .55
 // PROBLEM 1
 
 /*
-    Using for loop, calculate the total number
+    Using a for loop, calculate the total number
     of acres picked for the entire week.
 
     Save the number to a variable called 
@@ -48,8 +48,16 @@ const pinkPrice = .55
 
     Log `totalAcres` to the console.
 */
-
-// CODE HERE
+//Create the variable and set it to 0 to add to later
+let totalAcres = 0;
+//Sum each array value to totalAcres for each type of apple
+for (i = 0; i < fujiAcres.length; i++) {
+    totalAcres += fujiAcres[i]
+    totalAcres += galaAcres[i]
+    totalAcres += pinkAcres[i]
+}
+//Print totalAcres for verification
+console.log("Total Acres: " + totalAcres)
 
 
 
@@ -66,9 +74,12 @@ const pinkPrice = .55
 
     Log `averageDailyAcres` to the console.
 */
-
-// CODE HERE
-
+//Create the variable and set it to 0 to add to later
+let averageDailyAcres = 0
+//Divide totalAcres by length of fujiAcres to get the averageDailyAcres value
+averageDailyAcres = (totalAcres/fujiAcres.length)
+//Print averageDailyAcres for verification
+console.log("Average Daily Acres: " + averageDailyAcres)
 
 
 
@@ -104,9 +115,15 @@ const pinkPrice = .55
 
 let acresLeft = 174 
 let days = 0
+//The while loop will run as long as acresLeft is >), ticking up days by one and reducing acresLeft by averageDailyAcres
+ while (acresLeft > 0) {
+     days++
+     acresLeft = (acresLeft - averageDailyAcres)
 
-// CODE HERE
-
+     console.log('Acres left: ' + acresLeft)
+ }
+ //logging days as instructed
+console.log("Days: " + days)
 
 
 // PROBLEM 4
@@ -132,13 +149,25 @@ let days = 0
     and use the push method to add new 
     values to the new arrays.
 */
+//Copy the existing arrays so we don't overwrite or change them in any way
+let fujiAcresCopy = fujiAcres.slice()
+let galaAcresCopy = galaAcres.slice()
+let pinkAcresCopy = pinkAcres.slice()
 
-// CODE HERE
+// console.log(fujiAcresCopy)
+// console.log(galaAcresCopy)
+// console.log(pinkAcresCopy)
+//For loop to replace each array value (currently in acres) to tons for each apple type
+for (i = 0; i < fujiAcresCopy.length; i++) {
+    fujiAcresCopy[i] = fujiAcresCopy[i] * 6.5
+    galaAcresCopy[i] = galaAcresCopy[i] * 6.5
+    pinkAcresCopy[i] = pinkAcresCopy[i] * 6.5
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
-
+}
+//Log each array as Daily Apple Tonnage
+console.log("Daily Fuji Tonnage: " + '[' + fujiAcresCopy + ']')
+console.log("Daily Gala Tonnage: " + '[' + galaAcresCopy + ']')
+console.log("Daily Pink Tonnage: " + '[' + pinkAcresCopy + ']')
 
 
 
@@ -159,14 +188,26 @@ let days = 0
 
     Hint: there are 2000 pounds in a ton.
 */
-
-// CODE HERE 
-
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
-
-
+let fujiTons = 0
+let galaTons = 0
+let pinkTons = 0
+//For loop to add each array value to the tons variables to get total tonnage
+for (i = 0; i < fujiAcresCopy.length; i++) {
+    fujiTons += fujiAcresCopy[i]
+    galaTons += galaAcresCopy[i]
+    pinkTons += pinkAcresCopy[i]
+}
+console.log("Total Fuji Tonnage: " + fujiTons)
+console.log("Total Gala Tonnage: " + galaTons)
+console.log("Total Pink Tonnage: " + pinkTons)
+//Converting tons to pounds
+let fujiPounds = fujiTons * 2000
+let galaPounds = galaTons * 2000
+let pinkPounds = pinkTons * 2000
+//Logging each total as Total Apple Pounds
+console.log("Total Fuji Pounds: " + fujiPounds)
+console.log("Total Gala Pounds: " + galaPounds)
+console.log("Total Pink Pounds: " + pinkPounds)
 
 
 
@@ -188,11 +229,14 @@ let days = 0
 */
 
 // CODE HERE
-
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
-
+//Variables for total weekly profit PER APPLE TYPE
+let fujiProfit = fujiPrice * fujiPounds
+let galaProfit = galaPrice * galaPounds
+let pinkProfit = pinkPrice * pinkPounds
+//Logging
+console.log("Fuji Profit: " + fujiProfit)
+console.log("Gala Profit: " + galaProfit)
+console.log("Pink Profit: " + pinkProfit)
 
 
 
@@ -207,5 +251,7 @@ let days = 0
 
     Log `totalProfit` to the console.
 */
-
-// CODE HERE
+//Variable for total weekly profit
+let totalProfit = fujiProfit + galaProfit + pinkProfit
+//Logged
+console.log("Total Profit: " + totalProfit)
