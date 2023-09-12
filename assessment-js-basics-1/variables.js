@@ -2,18 +2,18 @@
 /* Create a variable called 'myName' with a value that is your name as a string. */
 
 let myName = 'Alex'
-
+//console.log(myName)
 
 //////////////////PROBLEM 2////////////////////
 /* Create a variable called 'faveNum' with a value that is your favorite number. */
 
 let faveNum = 27
-
+// console.log(faveNum)
 //////////////////PROBLEM 3////////////////////
 /* Create a variable called 'lovesCode' and assign it a boolean value. */
 
 let lovesCode = true
-
+// console.log(lovesCode)
 //////////////////PROBLEM 4////////////////////
 /*
   Write an if-statement that checks if the faveNum variable is 
