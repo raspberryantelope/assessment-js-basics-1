@@ -165,7 +165,7 @@ for (i = 0; i < fujiAcresCopy.length; i++) {
 
 }
 //Log each array as Daily Apple Tonnage
-console.log("Daily Fuji Tonnage: " + '[' + fujiAcresCopy + ']')
+console.log(`Daily Fuji Tonnage: ` + '[' + fujiAcresCopy + ']')
 console.log("Daily Gala Tonnage: " + '[' + galaAcresCopy + ']')
 console.log("Daily Pink Tonnage: " + '[' + pinkAcresCopy + ']')
 
